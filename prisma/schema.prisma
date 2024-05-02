@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Define the Zone model
+model Zone {
+  id               Int      @id @default(autoincrement())
+  name             String
+  leaderFullName   String
+  eNumberLeader    String
+  employees        Observations[] @relation("employeeZone")
+  observation      Observations[] @relation("observationZone")
+}
+
+// Define User model
+model User {
+  id               Int      @id @default(autoincrement())
+  email            String   @unique
+  password         String
+  isAdmin          Boolean  @default(false)
+}
+
+//Define Observations model
+model Observations {
+  id                            Int         @id @default(autoincrement())
+  employeeFirstName             String
+  employeeLastName              String
+  employeeEnumber               String
+  employeeFunctionality         String
+  employeeZone                  Int
+  employeeZoneRelation          Zone        @relation("employeeZone", fields: [employeeZone], references: [id])
+  nameLeaderEmployeeZone        String
+  observationZone               Int
+  observationZoneRelation       Zone        @relation("observationZone", fields: [observationZone], references: [id])
+  nameLeaderObservationZone     String
+  observation                   String
+  suggestion                    String
+  adminCommentaire              String
+  isAccepted                    Boolean     @default(false)
+  isResolved                    Boolean     @default(false)
+}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route,useNavigate } from 'react-router-dom';
-import prismadb from "./lib/prismaDB"
+import prismadb from "../lib/prismadb.ts"
 
 import AdminPageLogin from './components/adminLogin/AdminPageLogin';
 import EmployeePageLogin from './components/employeeLogin/EmployeePageLogin';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ObservationForm () {
@@ -10,22 +10,27 @@ export default function ObservationForm () {
                 <p className='font-medium text-lg text-gray-500 mt-3'>Please full out the complet form</p>
             </div>
             <div className='mt-8'>
+
                 <div>
-                    <label className='text-lg font-medium'>Name:</label>
+                    <label className='text-lg font-medium'>First Name:</label>
                     <input
                         className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
                         placeholder='Name'
                         type='text'
                     />
                 </div>
+
+
                 <div>
-                    <label  className='text-lg font-medium'>last name:</label>
+                    <label  className='text-lg font-medium'>Last name:</label>
                     <input
                         className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
                         placeholder='last name '
                         type='text'
                     />
                 </div>
+
+
                 <div>
                     <label  className='text-lg font-medium'>Matricule or E-number:</label>
                     <input
@@ -34,31 +39,61 @@ export default function ObservationForm () {
                         type='text'
                     />
                 </div>
+
+
+                <div>
+                    <label  className='text-lg font-medium'>Your Functionality in EATON:</label>
+                    <input
+                        className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
+                        placeholder='Functionality '
+                        type='text'
+                    />
+                </div>
+
+
+                <div>
+                    <label  className='text-lg font-medium'>The area you work in:</label>
+                    <select
+                    className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
+                    >
+                        <option></option> 
+                        {/* from database */}
+                    </select>
+                </div>
+
+
                 <div>
                     <label  className='text-lg font-medium'>The area where the observation would take place:</label>
                     <select
                     className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
                     >
                         <option></option> 
-                        {/* anjibhom mn db */}
+                        {/* from database */}
                     </select>
                 </div>
+
+
                 <div>
-                    <label  className='text-lg font-medium'>Summarize the current state of observation:</label>
+                    <label  className='text-lg font-medium'>Summarize the current state of the observation:</label>
                     <textarea
                     rows="2" cols="50"
                     className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
                     >
                     </textarea>
                 </div>
+
+
                 <div>
-                    <label  className='text-lg font-medium'>How do you propose to resolve this observation?</label>
+                    <label  className='text-lg font-medium'>How do you propose to resolve this observation?</label> 
+                    {/* seggestion */}
                     <textarea 
                     rows="2" cols="50"
                     className=' w-full  border-2 border-cyan-900 rounded-xl p-4 mt-1 bg-transparent'
                     >
                     </textarea>
                 </div>
+
+
                 <div>
                     <button
                     className='w-full active:scale-[.89] hover:scale-[1.01] ease-in-out active:duration-75 transition-all py-3 rounded-xl bg-cyan-900 text-white text-lg font-bold'
@@ -70,6 +105,8 @@ export default function ObservationForm () {
                         Sign in as an Employee
                     </Link>
                 </div>
+
+
             </div>
         </form>
         </div>

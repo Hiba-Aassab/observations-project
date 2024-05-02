@@ -4,7 +4,7 @@ import prismadb from "../lib/prismadb.ts"
 
 import AdminPageLogin from './components/adminLogin/AdminPageLogin';
 import EmployeePageLogin from './components/employeeLogin/EmployeePageLogin';
-import ObservationPage from './components/Observation/ObservationPage';
+import ObservationPage from './components/EmployeeObservation/ObservationPage';
 import Listedobservation from './components/Observation liste/Listedobservation';
 
 function populateDatabase() {
@@ -48,10 +48,10 @@ function App() {
 
               setupDatabase();
 
-              // Cleanup function
-              return () => {
-                      prismadb.$disconnect();
-              };
+              // // Cleanup function
+              // return () => {
+              //         prismadb.$disconnect();
+              // };
 
 }, [navigate]);
 

@@ -40,13 +40,13 @@ model Observations {
   employeeFunctionality         String
   employeeZone                  Int
   employeeZoneRelation          Zone        @relation("employeeZone", fields: [employeeZone], references: [id])
-  nameLeaderEmployeeZone        String
+  nameLeaderEmployeeZone        String      //from zone database
   observationZone               Int
   observationZoneRelation       Zone        @relation("observationZone", fields: [observationZone], references: [id])
-  nameLeaderObservationZone     String
+  nameLeaderObservationZone     String      //from zone database
   observation                   String
   suggestion                    String
-  adminCommentaire              String
-  isAccepted                    Boolean     @default(false)
-  isResolved                    Boolean     @default(false)
+  adminCommentaire              String      //in admin list of observations components
+  isAccepted                    Boolean     @default(false)//in admin list of observations components
+  isResolved                    Boolean     @default(false)//in admin list of observations components
 }

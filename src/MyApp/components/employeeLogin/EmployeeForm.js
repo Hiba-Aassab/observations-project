@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import prismadb from '../../../lib/prismadb';
+import prismadb from '../../../lib/prismadb.ts';
 // import { useNavigate } from 'react-router-dom';
 
 export default function EmployeeForm() {

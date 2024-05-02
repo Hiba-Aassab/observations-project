@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import prismadb from '../../../lib/prismadb';
+import prismadb from '../../../lib/prismadb.ts';
 
 
 export default function AdminForm() {
@@ -73,7 +73,7 @@ export default function AdminForm() {
                     </button>
                     {error && <p className='text-red-500'>{error}</p>}
                     <Link
-                        to="/"
+                        to="/Employee"
                         className='active:scale-[.89] hover:scale-[1.01] ease-in-out active:duration-75 transition-all py-3 hover:text-blue-500 text-lg '
                     >
                         Sign in as an Employee
